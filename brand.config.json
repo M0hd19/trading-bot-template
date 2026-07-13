@@ -1,21 +1,21 @@
 {
-    "brand_name": "MOHA",
-    "brand_domain": "ad3z.netlify.app",
+    "brand_name": "TradeBot Pro",
+    "brand_domain": "tradebot-pro.vercel.app",
     "brand_hostname": {
-        "staging": "staging.ad3z.netlify.app/dashboard",
-        "production": "ad3z.netlify.app/dashboard"
+        "staging": "staging.tradebot-pro.vercel.app/dashboard",
+        "production": "tradebot-pro.vercel.app/dashboard"
     },
-    "domain_name": "MOHA.com",
+    "domain_name": "TradeBot Pro",
     "colors": {
-        "primary": "#3b82f6",
-        "secondary": "#64748b",
-        "tertiary": "#8b5cf6",
-        "success": "#10b981",
-        "danger": "#ef4444",
-        "warning": "#f59e0b",
-        "info": "#0ea5e9",
+        "primary": "#1e40af",
+        "secondary": "#475569",
+        "tertiary": "#7c3aed",
+        "success": "#059669",
+        "danger": "#dc2626",
+        "warning": "#d97706",
+        "info": "#0284c7",
         "neutral": "#6b7280",
-        "black": "#0f172a",
+        "black": "#000000",
         "white": "#ffffff",
         "grey": {
             "50": "#f8fafc",
@@ -58,25 +58,25 @@
         "css_variable_prefix": "--brand"
     },
     "platform": {
-        "name": "MOHA Trading",
+        "name": "TradeBot Pro",
         "logo": {
             "type": "component",
             "component_name": "BrandLogo",
-            "alt_text": "MOHA Trading",
+            "alt_text": "TradeBot Pro Trading",
             "link_url": "/",
-            "show_text": false,
-            "text": "MOHA Trading"
+            "show_text": true,
+            "text": "TradeBot Pro"
         },
         "footer": {
-            "enable_language_settings": false,
-            "enable_theme_toggle": false
+            "enable_language_settings": true,
+            "enable_theme_toggle": true
         },
         "hostname": {
             "production": {
-                "com": "ad3z.netlify.app"
+                "com": "tradebot-pro.vercel.app"
             },
             "staging": {
-                "com": "staging.ad3z.netlify.app"
+                "com": "staging-tradebot-pro.vercel.app"
             }
         },
         "auth2_url": {
@@ -95,10 +95,10 @@
         }
     },
     "auth": {
-        "oauth_redirect_uri_staging": "https://staging.ad3z.netlify.app/dashboard",
-        "oauth_redirect_uri_production": "https://ad3z.netlify.app/dashboard",
+        "oauth_redirect_uri_staging": "https://staging-tradebot-pro.vercel.app/dashboard",
+        "oauth_redirect_uri_production": "https://tradebot-pro.vercel.app/dashboard",
         "oauth_scopes": ["trade", "account_manage"],
-        "oauth_app_id": ""
+        "oauth_app_id": "33BeITFXk8T0IJ8CSLrkB"
     },
     "app_id": {
         "staging": "",
