@@ -98,7 +98,7 @@
         "oauth_redirect_uri_staging": "https://staging-tradebot-pro.vercel.app/dashboard",
         "oauth_redirect_uri_production": "https://tradebot-pro.vercel.app/dashboard",
         "oauth_scopes": ["trade", "account_manage"],
-        "oauth_app_id": ""
+        "oauth_app_id": "33BeITFXk8T0IJ8CSLrkB"
     },
     "app_id": {
         "staging": "",
