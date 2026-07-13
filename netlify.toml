@@ -1,11 +1,62 @@
 [build]
-  command = "npm run build:all"
-  publish = "packages/core/dist"
+  # Build command to generate dist/ directory
+  command = "node scripts/netlify-build.js"
+  # Directory to deploy
+  publish = "dist"
+  # Node version
+  node_version = "20.x"
 
+# Environment variables
+[build.environment]
+  NODE_ENV = "production"
+
+# Redirect rules for SPA routing
 [[redirects]]
+  # SPA routing: all 404s -> index.html
   from = "/*"
   to = "/index.html"
   status = 200
 
-[build.environment]
-  NODE_VERSION = "20"
+# Security headers
+[[headers]]
+  for = "/*"
+  
+  [headers.values]
+    # Content Security Policy
+    Content-Security-Policy = "default-src 'self' https:; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.jsdelivr.net https://cdn.segment.com https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; img-src 'self' data: https:; font-src 'self' data: https://fonts.googleapis.com https://fonts.gstatic.com; connect-src 'self' https: wss:; frame-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self';"
+    
+    # Strict Transport Security (HSTS)
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
+    
+    # Prevent clickjacking attacks
+    X-Frame-Options = "DENY"
+    
+    # Prevent MIME type sniffing
+    X-Content-Type-Options = "nosniff"
+    
+    # Enable XSS protection
+    X-XSS-Protection = "1; mode=block"
+    
+    # Referrer Policy
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    
+    # Permissions Policy
+    Permissions-Policy = "geolocation=(), microphone=(), camera=(), payment=(), usb=(), magnetometer=(), gyroscope=(), accelerometer=()"
+
+# Asset caching - long term cache for versioned assets
+[[headers]]
+  for = "/assets/*"
+  
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# HTML caching - no cache to ensure latest version
+[[headers]]
+  for = "/*.html"
+  
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+# Development context
+[context.development]
+  environment = { NODE_ENV = "development" }
